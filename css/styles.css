@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-image: url('../web_imgs/otrofondo2.webp');   
+}
+
+.galeria{
+    columns: 7 200px;
+    margin: 1em;
+    gap: 20px;
+}
+
+/* ESTILO PARA LAS IMAGENES NO DESBORDEN */
+.galeria img, .vistaPreviaGallery img{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+/* ESTILOS PARA LA GALERIA DE LA VISTA PREVIA */
+.vistaPreviaGallery{
+    columns: 6 200px;
+    gap: 20px;
+}
+.vistaPreviaGallery img{
+    margin-bottom: 10px;
+}
+
+
+
+/* ESTILOS PARA EL NAV DEL MENU */
+.menu{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em; 
+    flex-wrap: wrap;
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* OCULTAR DISEÑO POR DEFECTO DEL BOTON INPUT FILE*/
+#fileToUpload{
+    display: none;
+}
+
+/* EFECTO PARA BOTONES DEL MENU Y SU EFECTO HOVER */
+.button-menu{
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 10px;
+    flex-basis: 100px;
+    position: relative;
+}
+.button-menu:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* ESTILO PAR BOTON CERRAR SESION */
+.btn-close-session{
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+/* ESTILO PARA BOTONES DEL INPUT FILE */
+.btn-action-file{
+    border: none;
+    padding: 10px;
+}
+.ocultar-vista-previa{
+    background-color: rgba(255, 0, 0, 0.7)
+}
+.btn-enviar-imagenes{
+    background-color: rgba(31, 90, 31, 1);
+}
+
+
+
+/* .img{
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+} */
+
+/* ESTILO PARA IMAGEN AMPLIADA */
+.ampliada {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.8);
+    outline: none;
+    padding: 20px;
+    height: 100%;
+    object-fit: contain;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%); 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    cursor: zoom-out;
+    border-radius: 0;
+}
+
+/* ESTILOS PARA LA IMGS CUANDO SE SELECCIONAN PARA SUBIRLAS */
+.vistaPrevia-activa{
+    background-color: rgba(240, 240, 240, 0.9);
+    position: fixed;
+    box-shadow: 0px 0px 10px black;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    z-index: 100;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+
+
+/* ESTILO PARA BOTONES DE LA VISTA PREVIA */
+.buttons-vista{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    display: none;
+    gap: 7px;
+    margin-bottom: 1em;
+    align-items: center;
+}
+#enviar-imagen:active{
+    background-color: green;
+}
+#ocultar-vista-previa:active{
+    background-color: red;
+}
+ 
+
+/* ESTILO BOTON BORRAR IMAGEN */
+.delete-image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+}
+
+.message-preview{
+    color: black;
+    font-weight: bolder;
+}
+
+/* ESTILO PARA EL DIV DE LA IMAGEN  */
+.imagen{
+    margin-bottom: 1em;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.imagen:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+
+@media screen and (max-width: 768px) {
+    .galeria{
+        columns: 5 120px;
+        margin: 1em;
+        margin-top: 40px;
+        gap: 10px;
+    }
+}
+
+/* ESTILOS PARA ICONOS DEL MENU Y PARA EL ICONO DEL INPUT FILE */
+.icon_menu{
+    max-width: 45px;
+    min-width: 40px;
+    width: 100%;
+    display: block;
+    margin: 0;
+    transition: 0.5s;
+    margin: 0 auto;
+}
+
+/* CENTRAR CONTENIDO DEL FORM */
+#subirimagen{
+    display: flex;
+    justify-content: center;  
+}
+
+/* MANTENER EL BOTON EN PANTALLA */
+.form-imagen{
+    position: sticky;
+    top: 1em;
+    z-index: 50;
+}
+
+/* EFECTO PARA EL BOTON DE SUBIR IMAGENES */
+.file-label{
+    padding: 7px;
+    display: inline-block;
+    font-weight: lighter;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px black;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* QUITAR VISTAPREVIA DEL HTML */
+.vistaPrevia{
+    display: none;
+}
